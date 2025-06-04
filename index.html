@@ -2,15 +2,13 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GhostFuckers - Профессиональная Охота на Призраков</title>
-    <!-- Иконки Font Awesome -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>GhostFuckers - Охота и Игра</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Пиздатый шрифт "Creepster" от Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Metal+Mania&display=swap" rel="stylesheet">
     
     <style>
-        /* Общие стили для атмосферы ужаса (из ПЕРВОЙ ВЕРСИИ) */
+        /* --- ОБЩИЕ СТИЛИ --- */
         body {
             font-family: 'Georgia', serif;
             margin: 0;
@@ -25,10 +23,8 @@
             color: #e50914; 
             letter-spacing: 3px;
             text-shadow: 
-                0 0 5px #ff0000,
-                0 0 10px #ff0000,
-                0 0 15px #000,
-                2px 2px 2px #000; 
+                0 0 5px #ff0000, 0 0 10px #ff0000,
+                0 0 15px #000, 2px 2px 2px #000; 
         }
 
         a {
@@ -36,9 +32,7 @@
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        a:hover {
-            color: #ff4d4d; 
-        }
+        a:hover { color: #ff4d4d; }
 
         .container {
             width: 85%;
@@ -46,7 +40,7 @@
             padding: 20px 0;
         }
 
-        /* Шапка сайта (из ПЕРВОЙ ВЕРСИИ) */
+        /* --- ШАПКА --- */
         #main-header {
             background: rgba(0, 0, 0, 0.85);
             padding: 1em 0;
@@ -71,7 +65,7 @@
             font-size: 2.8em;
             color: #e50914;
             text-shadow: 1px 1px 0 #000, 2px 2px 0 #400, 3px 3px 5px rgba(0,0,0,0.5);
-            cursor: pointer; /* Добавлен для индикации интерактивности при наведении */
+            cursor: pointer; 
             display: flex; 
             align-items: center;
         }
@@ -80,259 +74,251 @@
             margin-right: 10px; 
             color: #c5c5c5; 
             filter: drop-shadow(0 0 3px #e50914); 
-            transition: transform 0.3s ease-in-out, color 0.3s ease; /* Плавный переход для анимации */
+            transition: transform 0.3s ease-in-out, color 0.3s ease; 
         }
-        /* АНИМАЦИЯ ИКОНКИ ПРИЗРАКА ПРИ НАВЕДЕНИИ НА .site-title */
         .site-title:hover .logo-ghost-icon {
-            transform: scale(1.25) rotate(-20deg); /* Масштабирование и поворот */
-            color: #ff6b6b; /* Небольшое изменение цвета иконки при анимации (опционально) */
+            transform: scale(1.25) rotate(-20deg); 
+            color: #ff6b6b; 
         }
-
 
         #main-header nav a {
-            color: #aaa;
-            margin-left: 25px;
-            font-size: 1.2em;
-            text-transform: uppercase;
-            font-family: 'Creepster', cursive;
+            color: #aaa; margin-left: 25px; font-size: 1.2em;
+            text-transform: uppercase; font-family: 'Creepster', cursive;
             letter-spacing: 2px;
         }
-        #main-header nav a:hover {
-            color: #e50914;
-            text-shadow: 0 0 5px #ff0000;
-        }
+        #main-header nav a:hover { color: #e50914; text-shadow: 0 0 5px #ff0000; }
 
-        /* Секции с Parallax эффектом (из ПЕРВОЙ ВЕРСИИ) */
+        /* --- PARALLAX СЕКЦИИ --- */
         .parallax-section {
-            min-height: 100vh;
-            background-attachment: fixed;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding-top: 80px; 
-            color: #fff;
+            min-height: 100vh; background-attachment: fixed;
+            background-position: center center; background-repeat: no-repeat;
+            background-size: cover; position: relative; display: flex;
+            justify-content: center; align-items: center;
+            text-align: center; padding-top: 80px; color: #fff;
         }
         .parallax-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
             background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.9) 80%, #000 100%);
             z-index: 0;
         }
 
-
-        /* Hero секция (из ПЕРВОЙ ВЕРСИИ) */
+        /* --- HERO СЕКЦИЯ (ГЛАВНЫЙ ЭКРАН) --- */
         #hero {
             background-image: url('https://images.unsplash.com/photo-1509837881476-717950ffeefa?auto=format&fit=crop&w=1920&q=80'); 
         }
         
-        .hero-content {
-            z-index: 1; 
-            padding: 20px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 5px;
+        .hero-content { /* Эффект растворения черного квадрата */
+            z-index: 1; padding: 30px 40px; max-width: 700px; margin: 0 auto;
+            text-align: center; border-radius: 25px;
+            background: radial-gradient(ellipse at center,
+                rgba(10, 0, 0, 0.85) 15%, rgba(10, 0, 0, 0.75) 45%,
+                rgba(0, 0, 0, 0) 80% );
+            box-shadow: 
+                0 0 50px 25px rgba(30, 0, 0, 0.55),
+                0 0 90px 45px rgba(15, 0, 0, 0.4);
         }
 
         .central-logo-text {
-            font-family: 'Creepster', cursive;
-            font-size: 7em; 
-            margin-bottom: 10px;
-            color: #e50914;
-            line-height: 1;
-            text-shadow: 
-                0 0 10px #000,
-                0 0 20px #000,
-                0 0 30px #ff0000,
-                0 0 40px #ff0000,
-                3px 3px 2px #000;
+            font-family: 'Creepster', cursive; font-size: 7em; margin-bottom: 10px;
+            color: #e50914; line-height: 1;
+            text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #ff0000,
+                         0 0 40px #ff0000, 3px 3px 2px #000;
         }
-
         .hero-content .subtitle {
-            font-size: 1.8em;
-            color: #f0f0f0;
-            max-width: 700px;
-            margin: 0 auto;
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            text-shadow: 1px 1px 2px #000;
+            font-size: 1.8em; color: #f0f0f0; font-family: 'Georgia', serif;
+            line-height: 1.6; text-shadow: 1px 1px 2px #000;
         }
 
-        /* Секции с контентом (из ПЕРВОЙ ВЕРСИИ) */
-        .content-section {
-            padding: 80px 0;
-            min-height: 60vh; 
-            position: relative; 
-        }
-        .content-section .container {
-            position: relative; 
-            z-index: 1;
-        }
-
-        .content-section h2 {
-            font-size: 4em;
-            margin-bottom: 40px;
-            text-align: center;
-        }
+        /* --- ОБЫЧНЫЕ КОНТЕНТНЫЕ СЕКЦИИ --- */
+        .content-section { padding: 80px 0; min-height: 60vh; position: relative; }
+        .content-section .container { position: relative; z-index: 1; }
+        .content-section h2 { font-size: 4em; margin-bottom: 40px; text-align: center; }
         .content-section p {
-            font-size: 1.3em;
-            line-height: 1.8;
-            margin-bottom: 25px;
-            background: rgba(10, 0, 0, 0.6); 
-            padding: 20px;
-            border-left: 5px solid #e50914;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            font-size: 1.3em; line-height: 1.8; margin-bottom: 25px;
+            background: rgba(10, 0, 0, 0.6); padding: 20px;
+            border-left: 5px solid #e50914; box-shadow: 0 0 10px rgba(0,0,0,0.5);
             color: #e0e0e0;
         }
+        #what-to-do { background-image: url('https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=1920&q=80'); }
+        #where-they-live { background-image: url('https://images.unsplash.com/photo-1566899219518-401196316404?auto=format&fit=crop&w=1920&q=80'); }
+        #where-they-live p { border-left-color: #ff3333; }
 
-        #what-to-do {
-            background-image: url('https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=1920&q=80');
-        }
-        #where-they-live {
-            background-image: url('https://images.unsplash.com/photo-1566899219518-401196316404?auto=format&fit=crop&w=1920&q=80');
-        }
-        #where-they-live p {
-            border-left-color: #ff3333; 
-        }
-
-        /* Анимация появления текста (из ПЕРВОЙ ВЕРСИИ) */
-        .js-scroll {
-            opacity: 0;
-            transition: opacity 1s ease-out, transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1); 
-        }
-
-        .slide-in-left {
-            transform: translateX(-200px); 
-        }
-        .slide-in-left.scrolled {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .fade-in-up {
-            transform: translateY(100px);
-        }
-        .fade-in-up.scrolled {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        /* Анимация появления текста при скролле */
+        .js-scroll { opacity: 0; transition: opacity 1s ease-out, transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .slide-in-left { transform: translateX(-200px); }
+        .slide-in-left.scrolled { opacity: 1; transform: translateX(0); }
+        .fade-in-up { transform: translateY(100px); }
+        .fade-in-up.scrolled { opacity: 1; transform: translateY(0); }
         .delay-1 { transition-delay: 0.25s !important; }
         .delay-2 { transition-delay: 0.5s !important; }
         .delay-3 { transition-delay: 0.75s !important; }
 
-        /* Секция с виджетами/инструментами (из ПЕРВОЙ ВЕРСИИ) */
-        #tools-widgets {
-            background-color: #0a0a0a; 
-            padding: 80px 0;
-        }
-        .widgets-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 35px;
-            margin-top: 50px;
-        }
+        /* --- ВИДЖЕТЫ --- */
+        #tools-widgets { background-color: #0a0a0a; padding: 80px 0; }
+        .widgets-container { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 35px; margin-top: 50px; }
         .widget {
-            background: #111; 
-            border: 2px solid #4d0000; 
-            padding: 30px;
-            width: calc(50% - 50px); 
-            box-sizing: border-box;
-            text-align: center;
+            background: #111; border: 2px solid #4d0000; padding: 30px;
+            width: calc(50% - 50px); box-sizing: border-box; text-align: center;
             border-radius: 10px; 
             box-shadow: 0 0 20px rgba(255, 0, 0, 0.2), inset 0 0 15px rgba(50,0,0,0.5); 
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
-        .widget:hover {
-            transform: translateY(-12px) scale(1.04); 
-            box-shadow: 0 0 35px rgba(255, 0, 0, 0.5), inset 0 0 20px rgba(80,0,0,0.7);
-        }
-        .widget-icon {
-            font-size: 4.5em; 
-            color: #e50914;
-            margin-bottom: 20px;
-            display: block;
-            text-shadow: 0 0 10px #ff0000;
-        }
-        .widget h4 {
-            font-size: 2em;
-            margin-bottom: 15px;
-            color: #ff6666; 
-        }
-        .widget p {
-            font-size: 1.1em;
-            color: #bbb;
-            line-height: 1.6;
-            background: none;
-            padding: 0;
-            border-left: none;
-            box-shadow: none;
-        }
+        .widget:hover { transform: translateY(-12px) scale(1.04); box-shadow: 0 0 35px rgba(255, 0, 0, 0.5), inset 0 0 20px rgba(80,0,0,0.7); }
+        .widget-icon { font-size: 4.5em; color: #e50914; margin-bottom: 20px; display: block; text-shadow: 0 0 10px #ff0000; }
+        .widget h4 { font-size: 2em; margin-bottom: 15px; color: #ff6666; }
+        .widget p { font-size: 1.1em; color: #bbb; line-height: 1.6; background: none; padding: 0; border-left: none; box-shadow: none; }
 
-        /* Секция с видео (из ПЕРВОЙ ВЕРСИИ) */
-        #video-guide {
-            background-color: #050505; 
-            padding: 80px 0;
-            text-align: center;
-        }
+        /* --- ВИДЕО --- */
+        #video-guide { background-color: #050505; padding: 80px 0; text-align: center; }
         .video-container {
-            position: relative;
-            padding-bottom: 56.25%; 
-            height: 0;
-            overflow: hidden;
-            max-width: 880px; 
-            margin: 30px auto;
-            border: 4px solid #e50914;
-            border-radius: 5px;
-            box-shadow: 0 0 30px #ff0000, 0 0 50px #330000 inset;
+            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+            max-width: 880px; margin: 30px auto; border: 4px solid #e50914;
+            border-radius: 5px; box-shadow: 0 0 30px #ff0000, 0 0 50px #330000 inset;
         }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        #video-guide .video-caption { margin-top: 30px; font-size: 1.2em; color: #999; font-style: italic; }
+
+        /* --- ИГРОВАЯ СЕКЦИЯ --- */
+        #game-section {
+            background-color: #030303; /* Очень темный фон для игры */
+            text-align: center; padding-top: 60px;
         }
-        #video-guide .video-caption {
-            margin-top: 30px;
-            font-size: 1.2em;
-            color: #999;
-            font-style: italic;
+        .game-container {
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            position: relative; /* Для виртуальных контролов */
+        }
+        .game-controls-panel {
+            display: flex; justify-content: space-between; align-items: center;
+            width: 100%; max-width: 420px; /* Примерная ширина доски */
+            margin: 0 auto 15px auto; padding: 0 10px; box-sizing: border-box;
+        }
+        .game-info {
+            font-size: 1.3em; color: #ccc; font-family: 'Creepster', cursive;
+            letter-spacing: 1px; text-align: left;
+        }
+        .game-info span { color: #e50914; font-weight: bold; }
+
+        #fullscreen-button {
+            font-family: 'Creepster', cursive; background-color: transparent;
+            color: #c5c5c5; border: 1px solid #c5c5c5;
+            padding: 5px 10px; font-size: 1em; cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        #fullscreen-button:hover { background-color: #e50914; color: #000; }
+
+        #game-board {
+            display: grid; /* Сетка для статичных элементов (стен, начальной еды) */
+            margin: 0 auto; border: 3px solid #e50914;
+            background-color: #000; position: relative; /* Для Pacman и Ghosts */
+            box-shadow: 0 0 20px #e50914;
+            /* Размеры будут заданы JS */
+        }
+        .game-cell { /* Ячейка сетки */
+            box-sizing: border-box; display: flex;
+            justify-content: center; align-items: center;
+            /* Размеры будут заданы JS */
+        }
+        .wall { background-color: #2c0000; border: 1px solid #400; }
+        
+        .pacman { /* Контейнер для Пакмана */
+            background-color: yellow; border-radius: 50%;
+            position: absolute; /* Двигается поверх сетки */
+            transition: transform 0.05s linear; /* Для анимации рта */
+            /* Размеры и позиция будут заданы JS */
+        }
+        .pacman-mouth { /* "Рот" Пакмана */
+            position: absolute; width: 100%; height: 100%;
+            clip-path: polygon(100% 0%, 50% 50%, 100% 100%); /* Открытый вправо */
+            background-color: #000; /* Цвет фона доски */
+            transform-origin: 50% 50%;
+        }
+        .pacman.up .pacman-mouth { transform: rotate(-90deg); }
+        .pacman.down .pacman-mouth { transform: rotate(90deg); }
+        .pacman.left .pacman-mouth { transform: rotate(180deg); }
+        /* .pacman.right .pacman-mouth - нет трансформации, уже смотрит вправо */
+
+        .ghost-enemy { /* Враги-призраки */
+            position: absolute; /* Двигаются поверх сетки */
+            display: flex; justify-content: center; align-items: center;
+            color: #ff4d4d; /* Базовый красный */
+            transition: left 0.15s linear, top 0.15s linear, opacity 0.3s;
+            /* Размеры и fontSize будут заданы JS */
+        }
+        .ghost-enemy.blue { color: #3498db; } 
+        .ghost-enemy.pink { color: #ff7eb9; }
+        .ghost-enemy.orange { color: #e67e22; }
+        .ghost-enemy.frightened { color: #77aaff; opacity: 0.8; } /* Уязвимые призраки */
+
+        .pellet-ghost { /* "Еда" в виде маленьких призраков */
+            color: #888; /* Тусклый серый */
+            /* fontSize будет задан JS */
+        }
+        .power-pellet { /* Большая точка "энергетик" */
+            background-color: #ffd700; border-radius: 50%;
+            box-shadow: 0 0 8px #ffd700;
+            /* Размеры будут заданы JS */
         }
 
-        /* Подвал сайта (из ПЕРВОЙ ВЕРСИИ) */
+        #start-game-button {
+            font-family: 'Creepster', cursive; background-color: #e50914; color: #fff;
+            border: 2px solid #ff4d4d; padding: 10px 20px; font-size: 1.5em;
+            cursor: pointer; margin-top: 20px; letter-spacing: 2px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 0 10px #e50914;
+        }
+        #start-game-button:hover { background-color: #ff3333; transform: scale(1.05); }
+        
+        #game-over-message {
+            display: none; font-size: 2.5em; color: #e50914;
+            margin-top: 15px; text-shadow: 0 0 10px #000;
+        }
+
+        /* Виртуальные контролы для тач и мыши */
+        #virtual-controls {
+            display: none; /* По умолчанию скрыты, показываем по условию */
+            margin-top: 20px; width: 150px; height: 150px; position: relative;
+        }
+        .control-button {
+            position: absolute; width: 50px; height: 50px;
+            background-color: rgba(100, 0, 0, 0.6); /* Темно-красный полупрозрачный */
+            border: 1px solid #e50914; color: white; font-size: 20px;
+            display: flex; justify-content: center; align-items: center;
+            cursor: pointer; user-select: none; border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+        .control-button:hover, .control-button:active { background-color: rgba(229, 9, 20, 0.8); }
+        #control-up { top: 0; left: 50px; } #control-down { bottom: 0; left: 50px; }
+        #control-left { top: 50px; left: 0; } #control-right { top: 50px; right: 0; }
+
+        /* Полноэкранный режим для игры */
+        body:-webkit-full-screen #game-section, body:-moz-full-screen #game-section,
+        body:-ms-fullscreen #game-section, body:fullscreen #game-section {
+            width: 100vw; height: 100vh; padding: 10px; margin:0;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            background-color: #000; /* Полностью черный фон в FS */
+        }
+        body:fullscreen #main-header, body:fullscreen footer { display: none; }
+        body:fullscreen #virtual-controls { display: flex; } /* Показываем контролы в FS */
+
+        /* --- ПОДВАЛ --- */
         #main-footer {
-            background: #000;
-            color: #666;
-            text-align: center;
-            padding: 40px 0;
-            border-top: 3px solid #e50914;
-            font-family: 'Creepster', cursive;
+            background: #000; color: #666; text-align: center; padding: 40px 0;
+            border-top: 3px solid #e50914; font-family: 'Creepster', cursive;
             letter-spacing: 1.5px;
         }
-        #main-footer p {
-            margin-bottom: 8px;
-            font-size: 1em;
-            text-shadow: 1px 1px 1px #000;
-        }
+        #main-footer p { margin-bottom: 8px; font-size: 1em; text-shadow: 1px 1px 1px #000; }
 
-        /* Адаптивность (из ПЕРВОЙ ВЕРСИИ) */
+        /* --- АДАПТИВНОСТЬ --- */
         @media (max-width: 992px) {
             .central-logo-text { font-size: 5em; }
             .widget { width: calc(50% - 40px); }
         }
-
         @media (max-width: 768px) {
             .site-title { font-size: 2em; }
-            .logo-ghost-icon { font-size: 0.8em; margin-right: 8px; } /* Адаптация иконки */
+            .logo-ghost-icon { font-size: 0.8em; margin-right: 8px; } 
             #main-header nav { display: none; } 
             .header-container { justify-content: center; } 
             .central-logo-text { font-size: 3.5em; }
@@ -340,14 +326,20 @@
             .content-section h2 { font-size: 3em; }
             .content-section p { font-size: 1.1em; }
             .widget { width: calc(100% - 40px); }
-            .widget-icon { font-size: 3.5em; }
-            .widget h4 { font-size: 1.6em; }
+            .game-controls-panel { flex-direction: column; gap: 10px; align-items: center;}
+            #virtual-controls { display: flex; } /* Показываем контролы на тач по умолчанию */
         }
-
         @media (max-width: 480px) {
-            .central-logo-text { font-size: 2.8em; }
-            .hero-content .subtitle { font-size: 1.2em; }
-            .content-section h2 { font-size: 2.5em; }
+           .central-logo-text { font-size: 2.8em; }
+           .hero-content .subtitle { font-size: 1.2em; }
+           .content-section h2 { font-size: 2.5em; }
+           .game-info { font-size: 1.1em; }
+           #start-game-button { font-size: 1.2em; }
+           #game-over-message { font-size: 2em; }
+           #virtual-controls { width: 120px; height: 120px; }
+           .control-button { width: 40px; height: 40px; font-size: 16px;}
+           #control-up { left: 40px; } #control-down { left: 40px; }
+           #control-left { top: 40px; } #control-right { top: 40px; }
         }
     </style>
 </head>
@@ -355,110 +347,418 @@
 
     <header id="main-header">
         <div class="header-container">
-            <div class="site-title"> <!-- При наведении на этот блок будет анимироваться .logo-ghost-icon -->
-                <i class="fas fa-ghost logo-ghost-icon"></i> 
-                <a href="">GhostFuckers</a>
+            <div class="site-title"> 
+                <i class="fas fa-ghost logo-ghost-icon"></i> GhostFuckers
             </div>
             <nav>
-                <a href="#hero">Главная</a>
-                <a href="#what-to-do">Что делать</a>
-                <a href="#tools-widgets">Инструменты</a>
-                <a href="#video-guide">Видео</a>
+                <a href="#hero">Главная</a> <a href="#what-to-do">Что делать</a>
+                <a href="#tools-widgets">Инструменты</a> <a href="#video-guide">Видео</a>
+                <a href="#game-section">Игра</a>
             </nav>
         </div>
     </header>
 
-    <section id="hero" class="parallax-section">
-        <div class="hero-content">
-            <h1 class="central-logo-text js-scroll fade-in-up"><a href="#">GhostFuckers</a></h1>
-            <p class="subtitle js-scroll fade-in-up delay-1">Если в твоем доме завелась нечисть... Ты знаешь, кого НЕ вызывать. Мы сами придем. И мы не просто изгоняем. Мы... решаем проблему. Радикально.</p>
-        </div>
-    </section>
+    <section id="hero" class="parallax-section"> <div class="hero-content"> <h1 class="central-logo-text js-scroll fade-in-up">GhostFuckers</h1> <p class="subtitle js-scroll fade-in-up delay-1">Если в твоем доме завелась нечисть... Ты знаешь, кого НЕ вызывать. Мы сами придем. И мы не просто изгоняем. Мы... решаем проблему. Радикально.</p> </div> </section>
+    <section id="what-to-do" class="content-section parallax-section"> <div class="container"> <h2 class="js-scroll slide-in-left">Что мы делаем с призраками?</h2> <p class="js-scroll slide-in-left delay-1">Когда стандартные экзорцисты разводят руками, а святая вода кажется просто минералкой – на сцену выходят "GhostFuckers". Мы не признаем полумер. Обнаружение, идентификация, нейтрализация. Под "нейтрализацией" мы понимаем полный и окончательный... контакт.</p> <p class="js-scroll slide-in-left delay-2">Каждый случай уникален. От надоедливого полтергейста, швыряющего твою посуду, до злобной твари из преисподней, желающей утащить твою душу – у нас есть подход...</p> </div> </section>
+    <section id="where-they-live" class="content-section parallax-section alt-bg"> <div class="container"> <h2 class="js-scroll slide-in-left">Излюбленные места обитания</h2> <p class="js-scroll slide-in-left delay-1">Призраки – те еще эстеты мрака. Заброшенные психушки, старинные особняки с кровавой историей, древние кладбища под полной луной – классика жанра...</p> <p class="js-scroll slide-in-left delay-2">Наша команда "GhostFuckers" провела годы, изучая эти аномальные зоны. Мы знаем их привычки, их слабые места...</p> </div> </section>
+    <section id="tools-widgets" class="content-section"> <div class="container"> <h2 class="js-scroll slide-in-left">Наш Арсенал для Охоты</h2> <div class="widgets-container"> <div class="widget js-scroll slide-in-left"><i class="fas fa-ghost widget-icon"></i><h4>ЭМП-Сканеры "Душелов"</h4><p>Улавливают даже самые тонкие флуктуации...</p></div> <div class="widget js-scroll slide-in-left delay-1"><i class="fas fa-wave-square widget-icon"></i><h4>Генераторы Белого Шума "Шепот Ада"</h4><p>Заставляют духов проявляться и говорить...</p></div> <div class="widget js-scroll slide-in-left delay-2"><i class="fas fa-skull-crossbones widget-icon"></i><h4>Ритуальные Наборы "Последний Аргумент"</h4><p>Когда уговоры не действуют...</p></div> <div class="widget js-scroll slide-in-left delay-3"><i class="fas fa-camera-retro widget-icon"></i><h4>Спектральные Камеры "Око Ужаса"</h4><p>Фиксируем то, что не видит обычный глаз...</p></div> </div> </div> </section>
+    <section id="video-guide" class="content-section"> <div class="container"> <h2 class="js-scroll slide-in-left">Инструкция: Как НЕ НАДО ловить призраков</h2> <div class="video-container js-scroll slide-in-left delay-1"><iframe width="560" height="315" src="https://www.youtube.com/embed/S9iZAYSF_cM?autoplay=1&mute=1&loop=1&playlist=S9iZAYSF_cM&controls=0&showinfo=0&modestbranding=1" title="Scary Ghost Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div> <p class="video-caption js-scroll slide-in-left delay-2">Посмотрели? А теперь забудьте. Оставьте это нам, "GhostFuckers". <br>Самостоятельные попытки могут закончиться... неприятно. Для вас.</p> </div> </section>
 
-    <section id="what-to-do" class="content-section parallax-section">
-        <div class="container">
-            <h2 class="js-scroll slide-in-left">Что мы делаем с призраками?</h2>
-            <p class="js-scroll slide-in-left delay-1">Когда стандартные экзорцисты разводят руками, а святая вода кажется просто минералкой – на сцену выходят "GhostFuckers". Мы не признаем полумер. Обнаружение, идентификация, нейтрализация. Под "нейтрализацией" мы понимаем полный и окончательный... контакт.</p>
-            <p class="js-scroll slide-in-left delay-2">Каждый случай уникален. От надоедливого полтергейста, швыряющего твою посуду, до злобной твари из преисподней, желающей утащить твою душу – у нас есть подход. Иногда это сложное оборудование. Иногда – древний ритуал с очень специфическими компонентами. А иногда... ну, скажем так, грубая сила тоже имеет право на существование в межпространственных отношениях.</p>
-        </div>
-    </section>
+    <section id="game-section" class="content-section">
+        <div class="container game-container">
+            <h2 class="js-scroll slide-in-left">Игра: Охотник Душ</h2>
+            <div class="game-controls-panel">
+                <div class="game-info">
+                    Счет: <span id="score">0</span> | Жизни: <span id="lives">3</span>
+                </div>
+                <button id="fullscreen-button" title="На весь экран"><i class="fas fa-expand"></i></button>
+            </div>
+            <div id="game-board"></div>
+            <button id="start-game-button">Начать Охоту!</button>
+            <div id="game-over-message">Охота Окончена!</div>
 
-    <section id="where-they-live" class="content-section parallax-section alt-bg">
-        <div class="container">
-            <h2 class="js-scroll slide-in-left">Излюбленные места обитания</h2>
-            <p class="js-scroll slide-in-left delay-1">Призраки – те еще эстеты мрака. Заброшенные психушки, старинные особняки с кровавой историей, древние кладбища под полной луной – классика жанра. Чем больше страданий и темной энергии впитало место, тем комфортнее там этим... сущностям.</p>
-            <p class="js-scroll slide-in-left delay-2">Наша команда "GhostFuckers" провела годы, изучая эти аномальные зоны. Мы знаем их привычки, их слабые места. Мы не боимся сунуть нос в самые жуткие дыры этого и других миров. Если вы подозреваете, что ваш подвал стал порталом в ад – не паникуйте. Просто знайте, что есть те, кто готов спуститься туда и навести порядок. По-своему.</p>
-        </div>
-    </section>
-
-    <section id="tools-widgets" class="content-section">
-        <div class="container">
-            <h2 class="js-scroll slide-in-left">Наш Арсенал для Охоты</h2>
-            <div class="widgets-container">
-                <div class="widget js-scroll slide-in-left">
-                    <i class="fas fa-ghost widget-icon"></i>
-                    <h4>ЭМП-Сканеры "Душелов"</h4>
-                    <p>Улавливают даже самые тонкие флуктуации астрального поля. Призраки от них без ума... или в ужасе.</p>
-                </div>
-                <div class="widget js-scroll slide-in-left delay-1">
-                    <i class="fas fa-wave-square widget-icon"></i> 
-                    <h4>Генераторы Белого Шума "Шепот Ада"</h4>
-                    <p>Заставляют духов проявляться и говорить. Иногда они говорят очень плохие вещи.</p>
-                </div>
-                <div class="widget js-scroll slide-in-left delay-2">
-                    <i class="fas fa-skull-crossbones widget-icon"></i>
-                    <h4>Ритуальные Наборы "Последний Аргумент"</h4>
-                    <p>Когда уговоры не действуют. Соль, железо, серебро и кое-что похлеще. Только для профессионалов.</p>
-                </div>
-                 <div class="widget js-scroll slide-in-left delay-3">
-                    <i class="fas fa-camera-retro widget-icon"></i> 
-                    <h4>Спектральные Камеры "Око Ужаса"</h4>
-                    <p>Фиксируем то, что не видит обычный глаз. Иногда лучше бы и не видеть.</p>
-                </div>
+            <div id="virtual-controls">
+                <div class="control-button" id="control-up"><i class="fas fa-arrow-up"></i></div>
+                <div class="control-button" id="control-left"><i class="fas fa-arrow-left"></i></div>
+                <div class="control-button" id="control-right"><i class="fas fa-arrow-right"></i></div>
+                <div class="control-button" id="control-down"><i class="fas fa-arrow-down"></i></div>
             </div>
         </div>
     </section>
 
-    <section id="video-guide" class="content-section">
-        <div class="container">
-            <h2 class="js-scroll slide-in-left">Инструкция: Как НЕ НАДО ловить призраков</h2>
-            <div class="video-container js-scroll slide-in-left delay-1">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/S9iZAYSF_cM?autoplay=1&mute=1&loop=1&playlist=S9iZAYSF_cM&controls=0&showinfo=0&modestbranding=1" title="Scary Ghost Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <p class="video-caption js-scroll slide-in-left delay-2">Посмотрели? А теперь забудьте. Оставьте это нам, "GhostFuckers". <br>Самостоятельные попытки могут закончиться... неприятно. Для вас.</p>
-        </div>
-    </section>
-
-    <footer id="main-footer">
-        <p>© <script>document.write(new Date().getFullYear())</script> GhostFuckers Inc. Все неупокоенные души – наша забота.</p>
-        <p>"Мы трахнем любого призрака, который встанет на нашем пути!"</p>
-    </footer>
+    <footer id="main-footer"> <p>© <script>document.write(new Date().getFullYear())</script> GhostFuckers Inc. Все неупокоенные души – наша забота.</p> <p>"Мы трахнем любого призрака, который встанет на нашем пути!"</p> </footer>
 
     <script>
-        // Плавная анимация элементов при скролле (из ПЕРВОЙ ВЕРСИИ)
+        // --- ОБЩИЙ JS ДЛЯ САЙТА (АНИМАЦИЯ СКРОЛЛА) ---
         const scrollElements = document.querySelectorAll(".js-scroll");
-        const elementInView = (el, percentageScroll = 100) => {
-            const elementTop = el.getBoundingClientRect().top;
-            return (
-                elementTop <= 
-                ((window.innerHeight || document.documentElement.clientHeight) * (percentageScroll/100))
-            );
-        };
-        const displayScrollElement = (element) => {
-            element.classList.add("scrolled");
-        };
-        const handleScrollAnimation = () => {
-            scrollElements.forEach((el) => {
-                if (elementInView(el, 75)) { 
-                    displayScrollElement(el);
-                }
-            });
-        };
+        const elementInView = (el, percentageScroll = 100) => el.getBoundingClientRect().top <= ((window.innerHeight || document.documentElement.clientHeight) * (percentageScroll/100));
+        const displayScrollElement = (element) => element.classList.add("scrolled");
+        const handleScrollAnimation = () => scrollElements.forEach(el => { if (elementInView(el, 75)) displayScrollElement(el); });
+        
         document.addEventListener('DOMContentLoaded', () => {
             handleScrollAnimation(); 
             window.addEventListener("scroll", handleScrollAnimation);
+            initializeGameControls(); // Инициализация игровых контролов после загрузки DOM
         });
-    </script>
 
+        // --- ЛОГИКА ИГРЫ PAC-MAN ---
+        const gameModule = (() => {
+            // DOM элементы игры
+            const gameBoardElement = document.getElementById('game-board');
+            const scoreElement = document.getElementById('score');
+            const livesElement = document.getElementById('lives');
+            const startButton = document.getElementById('start-game-button');
+            const gameOverMessage = document.getElementById('game-over-message');
+            const fullscreenButton = document.getElementById('fullscreen-button');
+            const virtualControls = {
+                up: document.getElementById('control-up'),
+                down: document.getElementById('control-down'),
+                left: document.getElementById('control-left'),
+                right: document.getElementById('control-right'),
+            };
+
+            // Игровые константы и переменные состояния
+            const BASE_TILE_SIZE = 20; // Базовый размер ячейки
+            let TILE_SIZE = BASE_TILE_SIZE;
+            let ROWS = 0;
+            let COLS = 0;
+            const PACMAN_SPEED_MS = 160; // Скорость Пакмана
+            const GHOST_SPEED_MS = 280;  // Скорость Призраков
+            const POWER_PELLET_DURATION_MS = 7000;
+
+            const mapLayouts = [ /* Шаблоны карт (0-пусто, 1-стена, 2-еда, 3-энергетик, S-старт пакмана, G-старт врага) */
+                [ /* Карта 1 */ "11111111111111111111","1S2222222112222222G1","12111211211211121121","121G1211211211121G121","12222222222222222221","12112121111121211211","12222122211222122221","11112111011011112111","00012100000000121000","111121011GG110121111","1G2222010000102222G1","11112101111110121111","12222122211222122221","12112121111121211211","13222222200222222321","12111211211211121121","121G1211211211121G121","12222222211222222221","1G2222222222222222G1","11111111111111111111" ],
+                [ /* Карта 2 */ "11111111111111111111","1S221222G22G222122G1","12121211121112121211","121222212221222212G1","122211221G1122112221","11121G22222222G12111","1G2222111211122222G1","1211122G222G22211121","12222212111121222221","1111G212G00G212G1111","12222212111121222221","1G11122G222G222111G1","12222111211121112221","11121G22222222G12111","122211221G1122112221","1G1222212221222212G1","12121211121112121211","1S221222G22G22212231","13222222222222222231","11111111111111111111" ]
+            ];
+            let currentMapStringArray;
+            let mapGrid = []; // Числовое представление карты
+
+            let pacman = { x: 0, y: 0, dir: 'right', nextDir: 'right', element: null, mouthElement: null };
+            let ghosts = [];
+            let score = 0;
+            let lives = 3;
+            let totalPellets = 0;
+            let pacmanMoveInterval = null;
+            let ghostMoveInterval = null;
+            let powerPelletActive = false;
+            let powerPelletTimer = null;
+            let eatenGhostsInPowerMode = 0;
+
+            // --- Инициализация и рендеринг ---
+            function parseMap(stringMap) { /* ... (логика из предыдущего ответа, но сохраняет в mapGrid) ... */
+                mapGrid = []; totalPellets = 0;
+                const pacmanStartPositions = []; const ghostStartPositions = [];
+                stringMap.forEach((rowStr, rIdx) => {
+                    const row = [];
+                    for (let cIdx = 0; cIdx < rowStr.length; cIdx++) {
+                        const char = rowStr[cIdx];
+                        if (char === '1') row.push(1);
+                        else if (char === '2') { row.push(2); totalPellets++; }
+                        else if (char === '3') { row.push(3); totalPellets++; }
+                        else if (char === 'S') { row.push(0); pacmanStartPositions.push({x: cIdx, y: rIdx}); }
+                        else if (char === 'G') { row.push(0); ghostStartPositions.push({x: cIdx, y: rIdx}); }
+                        else row.push(0);
+                    }
+                    mapGrid.push(row);
+                });
+                ROWS = mapGrid.length; COLS = mapGrid[0] ? mapGrid[0].length : 0;
+                return { pacmanStartPositions, ghostStartPositions };
+            }
+
+            function adaptTileAndBoardSize() { /* ... (логика из предыдущего ответа, обновляет TILE_SIZE и размеры gameBoardElement) ... */
+                const container = document.querySelector('.game-container') || document.body;
+                const boardMaxWidth = container.clientWidth * 0.95;
+                const availableHeight = window.innerHeight * (document.fullscreenElement || document.webkitFullscreenElement ? 0.9 : 0.6);
+                const boardMaxHeight = availableHeight - (virtualControls.up.clientHeight > 10 ? virtualControls.up.clientHeight * 3 : 0) - 50;
+
+
+                const tileW = Math.floor(boardMaxWidth / COLS);
+                const tileH = Math.floor(boardMaxHeight / ROWS);
+                TILE_SIZE = Math.min(BASE_TILE_SIZE * 1.8, tileW, tileH);
+                TILE_SIZE = Math.max(10, TILE_SIZE); // Min size
+
+                gameBoardElement.style.width = (COLS * TILE_SIZE) + 'px';
+                gameBoardElement.style.height = (ROWS * TILE_SIZE) + 'px';
+                gameBoardElement.style.gridTemplateColumns = `repeat(${COLS}, ${TILE_SIZE}px)`;
+                gameBoardElement.style.gridTemplateRows = `repeat(${ROWS}, ${TILE_SIZE}px)`;
+            }
+
+            function createGameBoard() { /* ... (логика из предыдущего ответа, использует mapGrid, создает .game-cell с pellet-ghost/power-pellet) ... */
+                gameBoardElement.innerHTML = ''; adaptTileAndBoardSize();
+                mapGrid.forEach((row, rIdx) => {
+                    row.forEach((cellType, cIdx) => {
+                        const cellDiv = document.createElement('div');
+                        cellDiv.classList.add('game-cell');
+                        cellDiv.style.width = TILE_SIZE + 'px'; cellDiv.style.height = TILE_SIZE + 'px';
+                        if (cellType === 1) cellDiv.classList.add('wall');
+                        else if (cellType === 2) {
+                            const pellet = document.createElement('i');
+                            pellet.className = 'fas fa-ghost pellet-ghost';
+                            pellet.style.fontSize = (TILE_SIZE * 0.4) + 'px';
+                            cellDiv.appendChild(pellet);
+                        } else if (cellType === 3) {
+                            const powerP = document.createElement('div');
+                            powerP.classList.add('power-pellet');
+                            powerP.style.width = (TILE_SIZE * 0.6) + 'px';
+                            powerP.style.height = (TILE_SIZE * 0.6) + 'px';
+                            cellDiv.appendChild(powerP);
+                        }
+                        gameBoardElement.appendChild(cellDiv);
+                    });
+                });
+            }
+
+            function createCharacterElements() { /* ... (создает DOM элементы для Пакмана и врагов, если их нет, и стилизует их размеры) ... */
+                 if (!pacman.element) {
+                    pacman.element = document.createElement('div');
+                    pacman.element.classList.add('pacman');
+                    pacman.mouthElement = document.createElement('div');
+                    pacman.mouthElement.classList.add('pacman-mouth');
+                    pacman.element.appendChild(pacman.mouthElement);
+                    gameBoardElement.appendChild(pacman.element);
+                }
+                pacman.element.style.width = TILE_SIZE + 'px'; pacman.element.style.height = TILE_SIZE + 'px';
+
+                ghosts.forEach(g => g.element && g.element.remove()); ghosts = [];
+                const ghostColors = ['', 'blue', 'pink', 'orange'];
+                const { ghostStartPositions } = parseMap(currentMapStringArray); // Получаем стартовые поз.
+                ghostStartPositions.slice(0, 4).forEach((pos, idx) => {
+                    const ghost = { id: idx, x: pos.x, y: pos.y, dir: 'left', prevDx:0, prevDy:0, element: document.createElement('div'), colorClass: ghostColors[idx % ghostColors.length], isFrightened: false, homeBase: {x:pos.x, y:pos.y} };
+                    ghost.element.className = `ghost-enemy ${ghost.colorClass}`;
+                    ghost.element.innerHTML = `<i class="fas fa-ghost"></i>`;
+                    ghost.element.style.width = TILE_SIZE + 'px'; ghost.element.style.height = TILE_SIZE + 'px';
+                    ghost.element.firstChild.style.fontSize = (TILE_SIZE * 0.7) + 'px';
+                    gameBoardElement.appendChild(ghost.element);
+                    ghosts.push(ghost);
+                });
+            }
+            
+            function positionCharacters(pacmanStartPos) { /* ... (устанавливает начальные X, Y и позиционирует DOM элементы) ... */
+                pacman.x = pacmanStartPos.x; pacman.y = pacmanStartPos.y;
+                pacman.dir = 'right'; pacman.nextDir = 'right';
+                pacman.element.className = 'pacman ' + pacman.dir;
+                positionAbsoluteElement(pacman.element, pacman.x, pacman.y);
+                ghosts.forEach(g => positionAbsoluteElement(g.element, g.x, g.y));
+            }
+
+            function positionAbsoluteElement(element, gridX, gridY) {
+                element.style.left = (gridX * TILE_SIZE) + 'px';
+                element.style.top = (gridY * TILE_SIZE) + 'px';
+            }
+            
+            function updateUI() { scoreElement.textContent = score; livesElement.textContent = lives; }
+
+            // --- ЛОГИКА ДВИЖЕНИЯ И КОЛЛИЗИЙ ---
+            function canMove(x, y, dirObj) { /* ... (проверяет, можно ли двигаться из x,y в направлении dirObj) ... */
+                let nextX = x + dirObj.dx; let nextY = y + dirObj.dy;
+                if (nextX < 0) nextX = COLS - 1; else if (nextX >= COLS) nextX = 0;
+                if (nextY < 0) nextY = ROWS - 1; else if (nextY >= ROWS) nextY = 0;
+                return { can: mapGrid[nextY][nextX] !== 1, x: nextX, y: nextY };
+            }
+            const directions = { up: {dx:0, dy:-1}, down: {dx:0, dy:1}, left: {dx:-1, dy:0}, right: {dx:1, dy:0} };
+
+            function movePacman() { /* ... (логика из предыдущего ответа, использует nextDir, ест еду, активирует энергетик) ... */
+                let moved = false;
+                // Попробовать желаемое направление
+                const nextMoveAttempt = canMove(pacman.x, pacman.y, directions[pacman.nextDir]);
+                if (nextMoveAttempt.can) {
+                    pacman.dir = pacman.nextDir;
+                    pacman.x = nextMoveAttempt.x; pacman.y = nextMoveAttempt.y;
+                    moved = true;
+                } else { // Если желаемое направление заблокировано, попробовать текущее
+                    const currentMoveAttempt = canMove(pacman.x, pacman.y, directions[pacman.dir]);
+                    if (currentMoveAttempt.can) {
+                        pacman.x = currentMoveAttempt.x; pacman.y = currentMoveAttempt.y;
+                        moved = true;
+                    }
+                }
+
+                if (moved) {
+                    positionAbsoluteElement(pacman.element, pacman.x, pacman.y);
+                    pacman.element.className = 'pacman ' + pacman.dir;
+                    // Логика поедания еды
+                    const cellBoardIndex = pacman.y * COLS + pacman.x;
+                    const cellDivOnBoard = gameBoardElement.children[cellBoardIndex];
+                    if (mapGrid[pacman.y][pacman.x] === 2 || mapGrid[pacman.y][pacman.x] === 3) {
+                        const isPower = mapGrid[pacman.y][pacman.x] === 3;
+                        score += isPower ? 50 : 10; totalPellets--; mapGrid[pacman.y][pacman.x] = 0;
+                        if(cellDivOnBoard) cellDivOnBoard.innerHTML = '';
+                        if (isPower) {
+                            powerPelletActive = true; eatenGhostsInPowerMode = 0;
+                            ghosts.forEach(g => { g.isFrightened = true; g.element.classList.add('frightened'); });
+                            clearTimeout(powerPelletTimer);
+                            powerPelletTimer = setTimeout(() => {
+                                powerPelletActive = false;
+                                ghosts.forEach(g => { g.isFrightened = false; g.element.classList.remove('frightened');});
+                            }, POWER_PELLET_DURATION_MS);
+                        }
+                        if (totalPellets === 0) winGame();
+                    }
+                }
+                updateUI();
+            }
+
+            function moveGhosts() { /* ... (улучшенный ИИ из предыдущего ответа: преследование/разбегание/случайность) ... */
+                 ghosts.forEach(ghost => {
+                    const possibleMoves = [];
+                    Object.values(directions).forEach(dir => {
+                        // Не идти назад, если есть другие варианты
+                        if (dir.dx === -ghost.prevDx && dir.dy === -ghost.prevDy && Object.values(directions).filter(d => canMove(ghost.x, ghost.y, d).can).length > 1) return;
+                        const move = canMove(ghost.x, ghost.y, dir);
+                        if (move.can) possibleMoves.push({ x: move.x, y: move.y, dx: dir.dx, dy: dir.dy });
+                    });
+
+                    if (possibleMoves.length > 0) {
+                        let chosenMove;
+                        if (ghost.isFrightened) { // Убегать
+                            possibleMoves.sort((a,b) => (Math.hypot(b.x-pacman.x, b.y-pacman.y)) - (Math.hypot(a.x-pacman.x, a.y-pacman.y)));
+                            chosenMove = possibleMoves[0];
+                        } else { // Преследовать (простая эвристика)
+                            possibleMoves.sort((a,b) => (Math.hypot(a.x-pacman.x, a.y-pacman.y)) - (Math.hypot(b.x-pacman.x, b.y-pacman.y)));
+                            chosenMove = possibleMoves[0];
+                            if (Math.random() < 0.25 && possibleMoves.length > 1) chosenMove = possibleMoves[Math.floor(Math.random() * possibleMoves.length)]; // Шанс на случайный ход
+                        }
+                        ghost.x = chosenMove.x; ghost.y = chosenMove.y;
+                        ghost.prevDx = chosenMove.dx; ghost.prevDy = chosenMove.dy;
+                        positionAbsoluteElement(ghost.element, ghost.x, ghost.y);
+                    }
+                });
+            }
+
+            function checkCollisions() { /* ... (Пакман vs Враги, логика энергетика и потери жизней) ... */
+                ghosts.forEach(ghost => {
+                    if (ghost.x === pacman.x && ghost.y === pacman.y) {
+                        if (ghost.isFrightened) {
+                            score += 200 * Math.pow(2, eatenGhostsInPowerMode); eatenGhostsInPowerMode++;
+                            ghost.x = ghost.homeBase.x; ghost.y = ghost.homeBase.y; // Возврат на базу
+                            ghost.isFrightened = false; ghost.element.classList.remove('frightened');
+                            positionAbsoluteElement(ghost.element, ghost.x, ghost.y);
+                        } else { // Столкновение не с испуганным
+                            lives--;
+                            if (lives <= 0) gameOver();
+                            else resetAfterLifeLost();
+                        }
+                    }
+                });
+                updateUI();
+            }
+            
+            function resetAfterLifeLost() {
+                const { pacmanStartPositions } = parseMap(currentMapStringArray);
+                const pacmanStartPos = pacmanStartPositions[0] || {x:1, y:1};
+                pacman.x = pacmanStartPos.x; pacman.y = pacmanStartPos.y;
+                pacman.dir = 'right'; pacman.nextDir = 'right';
+                positionAbsoluteElement(pacman.element, pacman.x, pacman.y);
+                pacman.element.className = 'pacman ' + pacman.dir;
+                // Можно добавить короткую паузу или анимацию неуязвимости
+            }
+
+            // --- УПРАВЛЕНИЕ И СОСТОЯНИЕ ИГРЫ ---
+            function gameLoop() { movePacman(); checkCollisions(); } // Основной игровой цикл для Пакмана
+            function ghostLoop() { moveGhosts(); checkCollisions(); } // Отдельный цикл для призраков
+
+            function startGame() { /* ... (сброс состояния, выбор карты, запуск циклов) ... */
+                gameOverMessage.style.display = 'none'; startButton.style.display = 'none';
+                score = 0; lives = 3; powerPelletActive = false; eatenGhostsInPowerMode = 0;
+                clearTimeout(powerPelletTimer);
+
+                currentMapStringArray = mapLayouts[Math.floor(Math.random() * mapLayouts.length)];
+                const { pacmanStartPositions } = parseMap(currentMapStringArray);
+                const pacmanStartPos = pacmanStartPositions[0] || {x:1, y:1};
+
+                createGameBoard(); // Создает доску
+                createCharacterElements(); // Создает DOM для персонажей
+                positionCharacters(pacmanStartPos); // Расставляет их
+                updateUI();
+
+                clearInterval(pacmanMoveInterval); clearInterval(ghostMoveInterval);
+                pacmanMoveInterval = setInterval(gameLoop, PACMAN_SPEED_MS);
+                ghostMoveInterval = setInterval(ghostLoop, GHOST_SPEED_MS);
+            }
+            
+            function handlePlayerInput(direction) { pacman.nextDir = direction; }
+
+            function handleKeyboardInput(e) {
+                if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d','W','A','S','D'].includes(e.key)) e.preventDefault();
+                if (e.key === 'ArrowUp' || e.key.toLowerCase() === 'w') handlePlayerInput('up');
+                else if (e.key === 'ArrowDown' || e.key.toLowerCase() === 's') handlePlayerInput('down');
+                else if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'a') handlePlayerInput('left');
+                else if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'd') handlePlayerInput('right');
+            }
+
+            function stopGameIntervals() { clearInterval(pacmanMoveInterval); clearInterval(ghostMoveInterval); }
+
+            function gameOver() { stopGameIntervals(); gameOverMessage.textContent = `Охота Провалена! Счет: ${score}`; gameOverMessage.style.display = 'block'; startButton.style.display = 'inline-block'; startButton.textContent = "Еще Раз?"; }
+            function winGame() { stopGameIntervals(); gameOverMessage.textContent = `Победа! Души Собраны! Счет: ${score}`; gameOverMessage.style.display = 'block'; startButton.style.display = 'inline-block'; startButton.textContent = "Снова в Бой?"; }
+
+            // --- Инициализация контролов (вызывается из DOMContentLoaded) ---
+            function initializeControls() {
+                startButton.addEventListener('click', startGame);
+                document.addEventListener('keydown', handleKeyboardInput);
+
+                ['up', 'down', 'left', 'right'].forEach(dir => {
+                    const button = virtualControls[dir];
+                    if(button) {
+                        button.addEventListener('click', () => handlePlayerInput(dir)); // Для мыши
+                        button.addEventListener('touchstart', (e) => { e.preventDefault(); handlePlayerInput(dir); }); // Для тача
+                    }
+                });
+
+                fullscreenButton.addEventListener('click', toggleFullScreen);
+                ['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange', 'MSFullscreenChange'].forEach(event => {
+                    document.addEventListener(event, handleFullscreenChange);
+                });
+            }
+            
+            function toggleFullScreen() { /* ... (логика из предыдущего ответа) ... */
+                const gameEl = document.getElementById('game-section');
+                if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                    if (gameEl.requestFullscreen) gameEl.requestFullscreen();
+                    else if (gameEl.webkitRequestFullscreen) gameEl.webkitRequestFullscreen();
+                    fullscreenButton.innerHTML = '<i class="fas fa-compress"></i>';
+                } else {
+                    if (document.exitFullscreen) document.exitFullscreen();
+                    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+                    fullscreenButton.innerHTML = '<i class="fas fa-expand"></i>';
+                }
+            }
+            function handleFullscreenChange() {
+                // Перерисовать доску и персонажей, если размеры изменились
+                // Это сложная часть, так как нужно сохранить состояние игры.
+                // Простейший вариант - просто адаптировать размеры, если это возможно без полной перерисовки.
+                // Для более надежного поведения, можно приостановить игру, перерисовать и возобновить.
+                if (pacmanMoveInterval) { // Если игра запущена
+                    adaptTileAndBoardSize();
+                    // Обновляем размеры и позиции существующих элементов
+                    gameBoardElement.querySelectorAll('.game-cell').forEach(cell => {
+                        cell.style.width = TILE_SIZE + 'px'; cell.style.height = TILE_SIZE + 'px';
+                        const pelletIcon = cell.querySelector('.pellet-ghost');
+                        if(pelletIcon) pelletIcon.style.fontSize = (TILE_SIZE * 0.4) + 'px';
+                        const powerPIcon = cell.querySelector('.power-pellet');
+                        if(powerPIcon) {powerPIcon.style.width = (TILE_SIZE*0.6)+'px'; powerPIcon.style.height = (TILE_SIZE*0.6)+'px';}
+
+                    });
+                    if(pacman.element){
+                         pacman.element.style.width = TILE_SIZE + 'px'; pacman.element.style.height = TILE_SIZE + 'px';
+                         positionAbsoluteElement(pacman.element, pacman.x, pacman.y);
+                    }
+                    ghosts.forEach(g => {
+                        if(g.element) {
+                            g.element.style.width = TILE_SIZE + 'px'; g.element.style.height = TILE_SIZE + 'px';
+                            g.element.firstChild.style.fontSize = (TILE_SIZE * 0.7) + 'px';
+                            positionAbsoluteElement(g.element, g.x, g.y);
+                        }
+                    });
+                }
+            }
+            
+            return { initializeControls }; // Экспортируем только то, что нужно вызвать снаружи
+        })();
+
+        function initializeGameControls() { // Эта функция вызывается после загрузки DOM
+            gameModule.initializeControls();
+        }
+
+    </script>
 </body>
 </html>
